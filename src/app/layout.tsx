@@ -1,18 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Lexend, DM_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
-const lexend = Lexend({
+const lexend = localFont({
+  src: "../fonts/Lexend-VariableFont_wght.ttf",
   variable: "--font-lexend",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: "100 900",
+  display: "swap",
 });
 
-const dmSans = DM_Sans({
+const dmSans = localFont({
+  src: "../fonts/DMSans-VariableFont_opsz,wght.ttf",
   variable: "--font-dm-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: "100 900",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
