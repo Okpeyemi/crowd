@@ -104,7 +104,7 @@ export default function Footer() {
         <hr className="my-4 sm:my-6 border-white/20" />
 
         {/* Disclaimers */}
-        <div className="space-y-2 sm:space-y-3 text-[10px] sm:text-xs leading-relaxed text-[#6B7280]">
+        <div className="space-y-2 sm:space-y-3 text-[10px] max-lg:text-justify sm:text-xs leading-relaxed text-[#6B7280]">
           <p>
             Sowefund est un Prestataire de Services de Financement Participatif (PSFP) reconnu et immatriculé sous le numéro FP-2023-9 par l&apos;Autorité des Marchés Financiers (AMF).
             Nous vous rappelons que l&apos;investissement au capital de jeunes entreprises comporte des risques pouvant aller jusqu&apos;à la perte totale du capital investi, ainsi qu&apos;un risque d&apos;absence de liquidité à l&apos;issue de la période d&apos;investissement. Nous vous conseillons d&apos;inscrire vos investissements sur Sowefund dans une démarche de diversification de votre portefeuille afin de mitiger ces risques.

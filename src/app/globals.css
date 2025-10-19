@@ -41,3 +41,15 @@ h6 {
 .font-heading {
   font-family: var(--font-heading), var(--font-sans);
 }
+
+/* Mobile menu enter animation */
+@keyframes mobileMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

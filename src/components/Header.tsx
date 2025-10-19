@@ -2,11 +2,23 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, Menu, User, Briefcase } from "lucide-react";
-import { useState } from "react";
+import { ChevronDown, Menu, X, User, Briefcase } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Header() {
   const [openMobile, setOpenMobile] = useState(false);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (openMobile) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [openMobile]);
 
   return (
     <header className="w-full border-b border-black/5 bg-background text-foreground">
@@ -147,15 +159,21 @@ export default function Header() {
         <button
           className="inline-flex items-center justify-center rounded-md border px-3 py-2 md:hidden"
           aria-label="Toggle menu"
+          aria-expanded={openMobile}
           onClick={() => setOpenMobile((v) => !v)}
         >
-          <Menu size={20} />
+          {openMobile ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
       {/* Mobile nav */}
       {openMobile && (
-        <div className="border-t md:hidden animate-in slide-in-from-top-2 duration-200">
+        <div
+          className="fixed inset-x-0 top-[56px] h-[calc(100vh-56px)] md:hidden z-50 bg-background text-foreground border-t overflow-y-auto"
+          role="dialog"
+          aria-label="Menu"
+          style={{ animation: "mobileMenuIn 220ms ease-out both" }}
+        >
           <div className="mx-auto max-w-7xl px-4 py-4">
             <div className="grid gap-4">
               <details>
