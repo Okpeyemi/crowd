@@ -268,7 +268,7 @@ export default function EntrepriseForm() {
   };
 
   return (
-    <section className="my-8 sm:my-10 md:my-12 px-4 md:px-6 w-full">
+    <section className="my-8 sm:my-10 md:my-12 w-full">
       {/* Outer frame */}
       <div
         className="rounded-2xl border-20 border-[#7819D4]/10"

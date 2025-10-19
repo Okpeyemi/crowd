@@ -59,7 +59,7 @@ export default function TestimonialsSection() {
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
           <div className="flex flex-col items-start gap-4 sm:gap-6 lg:gap-8 lg:min-w-[280px]">
             <h2 className="font-heading text-xl sm:text-2xl font-extrabold text-[#0B1131] md:text-3xl lg:text-4xl">
-              Ils ont levé des fonds avec Sowefund
+              Ils ont levé des fonds avec <br /> Crowd
             </h2>
 
             <div className="hidden items-center gap-2 lg:flex">
@@ -83,12 +83,12 @@ export default function TestimonialsSection() {
 
           <div
             ref={scrollerRef}
-            className="flex snap-x snap-mandatory gap-4 sm:gap-6 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex-1"
+            className="flex w-full snap-x snap-mandatory gap-4 sm:gap-6 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
           >
             {testimonials.map((t, i) => (
               <article
                 key={i}
-                className="min-w-[260px] sm:min-w-[280px] flex-1 snap-start rounded-2xl bg-[#E49D3E]/10 p-5 sm:p-6 md:min-w-[380px] lg:min-w-[420px]"
+                className="w-full md:w-[320px] lg:w-[420px] flex-none snap-center md:snap-start rounded-2xl bg-[#E49D3E]/10 p-5 sm:p-6"
               >
                 <div className="flex flex-col items-center text-center">
                   <Image

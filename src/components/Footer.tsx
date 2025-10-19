@@ -81,15 +81,17 @@ export default function Footer() {
         {/* Partners */}
         <div className="mt-8 sm:mt-10 flex flex-col gap-8 sm:gap-10 items-center">
           <div className="text-xs sm:text-sm font-semibold text-white/90 items-start flex w-full">Ils nous soutiennent</div>
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4 md:gap-6">
-            {partners.map((src, i) => (
-              <div
-                key={i}
-                className="flex h-12 w-24 sm:h-14 sm:w-28 items-center justify-center"
-              >
-                <Image src={src} alt={`partner-${i}`} width={96} height={40} className="object-contain" />
-              </div>
-            ))}
+          <div className="w-full overflow-x-auto">
+            <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-6 w-full snap-x snap-mandatory px-0.5">
+              {partners.map((src, i) => (
+                <div
+                  key={i}
+                  className="flex items-center justify-center flex-none snap-start"
+                >
+                  <Image src={src} alt={`partner-${i}`} width={96} height={40} className="object-contain" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
