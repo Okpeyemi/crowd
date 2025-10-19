@@ -10,28 +10,29 @@ export default function Header() {
 
   return (
     <header className="w-full border-b border-black/5 bg-background text-foreground">
-      <div className="flex items-center justify-between p-4 md:px-40">
-        <div className="flex items-center space-x-30">
+      <div className="flex items-center justify-between px-4 py-3 md:px-8 lg:px-40">
+        <div className="flex items-center space-x-4 md:space-x-8 lg:space-x-12">
           {/* Left: Logo */}
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2 group">
               <Image
                 src="/logo-dark.png"
                 alt="crowd logo"
-                width={100}
-                height={28}
+                width={80}
+                height={22}
+                className="md:w-[100px] md:h-[28px]"
                 priority
               />
             </Link>
           </div>
 
           {/* Center: Nav */}
-          <nav className="hidden items-center gap-6 md:flex">
+          <nav className="hidden items-center gap-4 lg:gap-6 md:flex">
             <div className="group relative">
-              <button className="flex items-center gap-1 text-sm font-medium hover:opacity-80">
+              <button className="flex items-center gap-1 text-sm font-medium hover:opacity-80 transition-opacity">
                 Investir <ChevronDown size={16} className="opacity-70" />
               </button>
-              <div className="invisible absolute left-0 top-full mt-2 min-w-40 rounded-md border bg-white p-2 opacity-0 shadow-md transition group-hover:visible group-hover:opacity-100">
+              <div className="invisible absolute left-0 top-full mt-2 min-w-40 rounded-md border bg-white p-2 opacity-0 shadow-md transition-all duration-200 group-hover:visible group-hover:opacity-100 z-50">
                 <Link
                   href="#"
                   className="block rounded px-3 py-2 text-sm hover:bg-black/5"
@@ -54,10 +55,10 @@ export default function Header() {
             </div>
 
             <div className="group relative">
-              <button className="flex items-center gap-1 text-sm font-medium hover:opacity-80">
+              <button className="flex items-center gap-1 text-sm font-medium hover:opacity-80 transition-opacity">
                 À propos <ChevronDown size={16} className="opacity-70" />
               </button>
-              <div className="invisible absolute left-0 top-full mt-2 min-w-40 rounded-md border bg-white p-2 opacity-0 shadow-md transition group-hover:visible group-hover:opacity-100">
+              <div className="invisible absolute left-0 top-full mt-2 min-w-40 rounded-md border bg-white p-2 opacity-0 shadow-md transition-all duration-200 group-hover:visible group-hover:opacity-100 z-50">
                 <Link
                   href="#"
                   className="block rounded px-3 py-2 text-sm hover:bg-black/5"
@@ -80,10 +81,10 @@ export default function Header() {
             </div>
 
             <div className="group relative">
-              <button className="flex items-center gap-1 text-sm font-medium hover:opacity-80">
+              <button className="flex items-center gap-1 text-sm font-medium hover:opacity-80 transition-opacity">
                 Guides <ChevronDown size={16} className="opacity-70" />
               </button>
-              <div className="invisible absolute left-0 top-full mt-2 min-w-40 rounded-md border bg-white p-2 opacity-0 shadow-md transition group-hover:visible group-hover:opacity-100">
+              <div className="invisible absolute left-0 top-full mt-2 min-w-40 rounded-md border bg-white p-2 opacity-0 shadow-md transition-all duration-200 group-hover:visible group-hover:opacity-100 z-50">
                 <Link
                   href="#"
                   className="block rounded px-3 py-2 text-sm hover:bg-black/5"
@@ -108,7 +109,7 @@ export default function Header() {
         </div>
 
         {/* Right: Actions */}
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden items-center gap-3 lg:gap-6 md:flex">
           <Link
             href="#"
             className="flex items-center gap-2 text-sm font-semibold"
@@ -116,10 +117,10 @@ export default function Header() {
             Portfolio
           </Link>
           <div className="group relative">
-            <button className="flex items-center gap-2 text-sm font-medium">
+            <button className="flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-80">
               Cristobal A. <ChevronDown size={16} className="opacity-70" />
             </button>
-            <div className="invisible absolute right-0 top-full mt-2 min-w-44 rounded-md border bg-white p-2 opacity-0 shadow-md transition group-hover:visible group-hover:opacity-100">
+            <div className="invisible absolute right-0 top-full mt-2 min-w-44 rounded-md border bg-white p-2 opacity-0 shadow-md transition-all duration-200 group-hover:visible group-hover:opacity-100 z-50">
               <Link
                 href="#"
                 className="block rounded px-3 py-2 text-sm hover:bg-black/5"
@@ -154,8 +155,8 @@ export default function Header() {
 
       {/* Mobile nav */}
       {openMobile && (
-        <div className="border-t md:hidden">
-          <div className="mx-auto max-w-7xl px-4 py-3 md:px-6">
+        <div className="border-t md:hidden animate-in slide-in-from-top-2 duration-200">
+          <div className="mx-auto max-w-7xl px-4 py-4">
             <div className="grid gap-4">
               <details>
                 <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-medium">

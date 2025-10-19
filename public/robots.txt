@@ -1,0 +1,35 @@
+# robots.txt pour Crowd - Plateforme de financement participatif
+
+# Autoriser tous les robots d'indexation
+User-agent: *
+Allow: /
+
+# Bloquer les pages sensibles (si nécessaire)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Sitemap
+Sitemap: https://crowd.fr/sitemap.xml
+
+# Règles spécifiques pour les principaux moteurs de recherche
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Bloquer les mauvais bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Crawl-delay pour éviter la surcharge
+Crawl-delay: 1

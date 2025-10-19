@@ -29,28 +29,28 @@ const steps = [
 
 export default function StepsSection() {
   return (
-    <section className="px-4 py-14 md:px-6 md:py-20">
-      <h2 className="text-center font-heading text-2xl font-extrabold text-[#0B1131] md:text-4xl">
+    <section className="px-4 py-10 sm:py-14 md:px-6 lg:px-8 md:py-20">
+      <h2 className="text-center font-heading text-xl sm:text-2xl font-extrabold text-[#0B1131] md:text-3xl lg:text-4xl">
         6 étapes pour lever des fonds
       </h2>
 
-      <div className="mt-10 grid gap-6 md:mt-12 md:grid-cols-3">
+      <div className="mt-8 grid gap-4 sm:gap-5 md:gap-6 sm:mt-10 md:mt-12 sm:grid-cols-2 lg:grid-cols-3">
         {steps.map((s, i) => (
           <div
             key={i}
-            className="rounded-2xl bg-[#F2CE9F] p-6 text-center shadow-sm ring-1 ring-black/5"
+            className="rounded-2xl bg-[#F2CE9F] p-5 sm:p-6 text-center shadow-sm ring-1 ring-black/5 transition-transform hover:scale-105"
           >
-            <h3 className="font-heading text-lg font-extrabold text-[#0B1131] md:text-xl">
+            <h3 className="font-heading text-base sm:text-lg font-extrabold text-[#0B1131] md:text-xl">
               {s.title}
             </h3>
-            <p className="mx-auto mt-3 max-w-md text-sm text-[#0B1131]/80 md:text-base">
+            <p className="mx-auto mt-2 sm:mt-3 max-w-md text-sm text-[#0B1131]/80 md:text-base leading-relaxed">
               {s.desc}
             </p>
           </div>
         ))}
       </div>
 
-      <div className="mt-10 flex justify-center">
+      <div className="mt-8 sm:mt-10 flex justify-center">
         <Button>Lever des fonds</Button>
       </div>
     </section>

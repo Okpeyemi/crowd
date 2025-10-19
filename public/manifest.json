@@ -1,0 +1,44 @@
+{
+  "name": "Crowd - Plateforme de financement participatif",
+  "short_name": "Crowd",
+  "description": "Levez des fonds pour votre entreprise avec 135 000 investisseurs",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7819D4",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "business"],
+  "lang": "fr",
+  "dir": "ltr",
+  "scope": "/",
+  "shortcuts": [
+    {
+      "name": "Lever des fonds",
+      "short_name": "Lever",
+      "description": "Démarrer une levée de fonds",
+      "url": "/lever-des-fonds",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Investir",
+      "short_name": "Investir",
+      "description": "Découvrir les projets",
+      "url": "/investir",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

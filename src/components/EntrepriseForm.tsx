@@ -124,7 +124,7 @@ export default function EntrepriseForm() {
   };
 
   const update = (name: keyof FormValues, v: string | File | null) => {
-    setValues((old) => ({ ...old, [name]: v as any }));
+    setValues((old) => ({ ...old, [name]: v as FormValues[typeof name] }));
   };
 
   const onFileDrop = (e: React.DragEvent<HTMLLabelElement>) => {
@@ -170,7 +170,7 @@ export default function EntrepriseForm() {
     switch (step.type) {
       case "text":
         return (
-          <div className="mt-10 max-w-3xl">
+          <div className="mt-6 sm:mt-8 md:mt-10 max-w-3xl">
             <input
               type="text"
               value={values[step.name as keyof FormValues] as string}
@@ -178,16 +178,16 @@ export default function EntrepriseForm() {
                 update(step.name as keyof FormValues, e.target.value)
               }
               placeholder={step.placeholder}
-              className="w-full bg-transparent text-2xl text-black/70 placeholder:text-black/20 focus:outline-none"
+              className="w-full bg-transparent text-lg sm:text-xl md:text-2xl text-black/70 placeholder:text-black/20 focus:outline-none"
               onKeyDown={onKeyDown}
               ref={inputRef as React.MutableRefObject<HTMLInputElement | null>}
             />
-            <div className="mt-3 h-px w-full bg-black/20" />
+            <div className="mt-2 sm:mt-3 h-px w-full bg-black/20" />
           </div>
         );
       case "textarea":
         return (
-          <div className="mt-10 max-w-3xl">
+          <div className="mt-6 sm:mt-8 md:mt-10 max-w-3xl">
             <textarea
               value={values[step.name as keyof FormValues] as string}
               onChange={(e) =>
@@ -195,34 +195,34 @@ export default function EntrepriseForm() {
               }
               placeholder={step.placeholder}
               rows={3}
-              className="w-full resize-y bg-transparent text-2xl text-black/70 placeholder:text-black/20 focus:outline-none"
+              className="w-full resize-y bg-transparent text-lg sm:text-xl md:text-2xl text-black/70 placeholder:text-black/20 focus:outline-none"
               onKeyDown={onKeyDown}
               ref={inputRef as React.MutableRefObject<HTMLTextAreaElement | null>}
             />
-            <div className="mt-3 h-px w-full bg-black/20" />
+            <div className="mt-2 sm:mt-3 h-px w-full bg-black/20" />
           </div>
         );
       case "number":
         return (
-          <div className="mt-10 max-w-3xl">
+          <div className="mt-6 sm:mt-8 md:mt-10 max-w-3xl">
             <input
               type="text"
               value={values.amount}
               onChange={(e) => update("amount", e.target.value.replace(/\D+/g, ""))}
               placeholder={step.placeholder}
-              className="w-full bg-transparent text-2xl text-black/70 placeholder:text-black/20 focus:outline-none"
+              className="w-full bg-transparent text-lg sm:text-xl md:text-2xl text-black/70 placeholder:text-black/20 focus:outline-none"
               onKeyDown={onNumberKeyDown}
               onPaste={onNumberPaste}
               inputMode="numeric"
               pattern="[0-9]*"
               ref={inputRef as React.MutableRefObject<HTMLInputElement | null>}
             />
-            <div className="mt-3 h-px w-full bg-black/20" />
+            <div className="mt-2 sm:mt-3 h-px w-full bg-black/20" />
           </div>
         );
       case "file":
         return (
-          <div className="mt-10 flex w-full max-w-3xl flex-col items-center">
+          <div className="mt-6 sm:mt-8 md:mt-10 flex w-full max-w-3xl flex-col items-center">
             <input
               ref={fileInputRef}
               type="file"
@@ -233,18 +233,18 @@ export default function EntrepriseForm() {
               onDrop={onFileDrop}
               onDragOver={(e) => e.preventDefault()}
               onClick={() => fileInputRef.current?.click()}
-              className="flex w-full cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-[#C5A5F8] bg-[#7819D4]/10 px-8 py-16 text-center"
+              className="flex w-full cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-[#C5A5F8] bg-[#7819D4]/10 px-4 py-10 sm:px-8 sm:py-16 text-center"
             >
-              <CloudUpload color={"#D2AEF5"} size={64} />
-              <div className="mt-4 font-bold" style={{ color: PURPLE }}>
+              <CloudUpload color={"#D2AEF5"} size={48} className="sm:w-16 sm:h-16" />
+              <div className="mt-3 sm:mt-4 text-sm sm:text-base font-bold" style={{ color: PURPLE }}>
                 Choisissez un fichier <span className="font-normal text-black">ou</span>{" "}
                 <span className="font-bold text-black">glissez ici</span>
               </div>
-              <div className="mt-1 text-sm text-black">
+              <div className="mt-1 text-xs sm:text-sm text-black">
                 Taille maximale : 10Mo
               </div>
               {values.pitchDeck && (
-                <div className="mt-4 text-sm text-black/80">
+                <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-black/80">
                   Fichier sélectionné : {values.pitchDeck.name}
                 </div>
               )}
@@ -253,11 +253,11 @@ export default function EntrepriseForm() {
         );
       case "done":
         return (
-          <div className="mt-10 flex flex-col items-center text-center">
-            <h2 className="font-heading text-4xl font-extrabold text-black">
+          <div className="mt-6 sm:mt-8 md:mt-10 flex flex-col items-center text-center">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
               Merci !
             </h2>
-            <p className="mt-3 text-black/70">
+            <p className="mt-2 sm:mt-3 text-sm sm:text-base text-black/70">
               Nous reviendrons vers vous dans les plus bref délais.
             </p>
           </div>
@@ -268,28 +268,28 @@ export default function EntrepriseForm() {
   };
 
   return (
-    <section className="mx-auto my-12 px-4 md:px-6 w-full">
+    <section className="my-8 sm:my-10 md:my-12 px-4 md:px-6 w-full">
       {/* Outer frame */}
       <div
         className="rounded-2xl border-20 border-[#7819D4]/10"
       >
         {/* Inner panel */}
-        <div className="relative bg-[#EAF2FF] px-6 py-10 md:px-10 md:py-14">
+        <div className="relative bg-[#EAF2FF] px-4 py-8 sm:px-6 sm:py-10 md:px-10 md:py-14">
           {/* Top-right logo */}
-          <div className="absolute right-6 top-6">
-            <Image src="/logo-dark.png" alt="crowd" width={72} height={18} />
+          <div className="absolute right-4 top-4 sm:right-6 sm:top-6">
+            <Image src="/logo-dark.png" alt="crowd" width={60} height={15} className="sm:w-[72px] sm:h-[18px]" />
           </div>
 
-          <div className="flex flex-col max-w-3xl mx-auto my-10">
+          <div className="flex flex-col max-w-3xl mx-auto my-6 sm:my-8 md:my-10">
             {/* Step number and title */}
-            <div className="flex items-start gap-3">
-              <span className="text-lg font-semibold" style={{ color: PURPLE }}>
+            <div className="flex items-start gap-2 sm:gap-3">
+              <span className="text-base sm:text-lg font-semibold" style={{ color: PURPLE }}>
                 {step.id}
               </span>
-              <span className="text-lg" style={{ color: PURPLE }}>
+              <span className="text-base sm:text-lg" style={{ color: PURPLE }}>
                 →
               </span>
-              <h3 className="font-heading text-2xl font-semibold text-black md:text-4xl">
+              <h3 className="font-heading text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-black">
                 {step.title}
               </h3>
             </div>
@@ -299,9 +299,9 @@ export default function EntrepriseForm() {
 
             {/* OK + hint */}
             {step.type !== "done" && (
-              <div className="mt-8 flex items-center gap-3">
+              <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
                 <button
-                  className="rounded-lg px-4 py-2 font-semibold text-white shadow-sm cursor-pointer"
+                  className="rounded-lg px-4 py-2 text-sm sm:text-base font-semibold text-white shadow-sm cursor-pointer"
                   style={{ backgroundColor: PURPLE }}
                   onClick={() => {
                     if (step.type === "file" && !values.pitchDeck) {
@@ -315,7 +315,7 @@ export default function EntrepriseForm() {
                 >
                   Ok
                 </button>
-                <div className="text-sm text-black/70">
+                <div className="text-xs sm:text-sm text-black/70">
                   appuyez sur <span className="font-semibold">Entrée ↵</span>
                 </div>
               </div>
@@ -323,14 +323,14 @@ export default function EntrepriseForm() {
           </div>
 
           {/* Bottom-right nav arrows */}
-          <div className="absolute bottom-6 right-6 flex items-center">
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 flex items-center">
             <button
               onClick={prev}
               disabled={stepIndex === 0}
-              className="rounded-l-md bg-[#D2AEF5] p-2 text-white shadow hover:opacity-90 cursor-pointer"
+              className="rounded-l-md bg-[#D2AEF5] p-1.5 sm:p-2 text-white shadow hover:opacity-90 cursor-pointer disabled:opacity-50"
               aria-label="Précédent"
             >
-              <ChevronUp size={18} />
+              <ChevronUp size={16} className="sm:w-[18px] sm:h-[18px]" />
             </button>
             <button
               onClick={() => {
@@ -348,10 +348,10 @@ export default function EntrepriseForm() {
                   ? false
                   : !canProceed
               }
-              className="rounded-r-md bg-[#7819D4] p-2 text-white shadow hover:opacity-90 cursor-pointer"
+              className="rounded-r-md bg-[#7819D4] p-1.5 sm:p-2 text-white shadow hover:opacity-90 cursor-pointer disabled:opacity-50"
               aria-label={step.type === "file" && !values.pitchDeck ? "Choisir un fichier" : "Suivant"}
             >
-              <ChevronDown size={18} />
+              <ChevronDown size={16} className="sm:w-[18px] sm:h-[18px]" />
             </button>
           </div>
         </div>
