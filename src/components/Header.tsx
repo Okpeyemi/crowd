@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <header className="w-full border-b border-black/5 bg-background text-foreground">
-      <div className="mx-auto flex max-w-7xl items-center justify-between p-4 md:px-6">
+      <div className="flex items-center justify-between p-4 md:px-40">
         <div className="flex items-center space-x-30">
           {/* Left: Logo */}
           <div className="flex items-center gap-2">

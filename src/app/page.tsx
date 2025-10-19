@@ -6,6 +6,7 @@ import StepsSection from "@/components/StepsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import RecipeSection from "@/components/RecipeSection";
 import FaqSection from "@/components/FaqSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <TestimonialsSection />
       <RecipeSection />
       <FaqSection />
+      <Footer />
     </div>
   );
 }

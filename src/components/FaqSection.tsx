@@ -44,7 +44,7 @@ export default function FaqSection() {
         {faqs.map((item, i) => {
           const isOpen = open === i;
           return (
-            <div key={i} className="rounded-lg py-1">
+            <div key={i} className="rounded-lg py-1 cursor-pointer">
               <button
                 onClick={() => setOpen(isOpen ? null : i)}
                 aria-expanded={isOpen}

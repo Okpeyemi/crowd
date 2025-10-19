@@ -301,7 +301,7 @@ export default function EntrepriseForm() {
             {step.type !== "done" && (
               <div className="mt-8 flex items-center gap-3">
                 <button
-                  className="rounded-lg px-4 py-2 font-semibold text-white shadow-sm"
+                  className="rounded-lg px-4 py-2 font-semibold text-white shadow-sm cursor-pointer"
                   style={{ backgroundColor: PURPLE }}
                   onClick={() => {
                     if (step.type === "file" && !values.pitchDeck) {
@@ -327,7 +327,7 @@ export default function EntrepriseForm() {
             <button
               onClick={prev}
               disabled={stepIndex === 0}
-              className="rounded-l-md bg-[#D2AEF5] p-2 text-white shadow hover:opacity-90"
+              className="rounded-l-md bg-[#D2AEF5] p-2 text-white shadow hover:opacity-90 cursor-pointer"
               aria-label="Précédent"
             >
               <ChevronUp size={18} />
@@ -348,7 +348,7 @@ export default function EntrepriseForm() {
                   ? false
                   : !canProceed
               }
-              className="rounded-r-md bg-[#7819D4] p-2 text-white shadow hover:opacity-90"
+              className="rounded-r-md bg-[#7819D4] p-2 text-white shadow hover:opacity-90 cursor-pointer"
               aria-label={step.type === "file" && !values.pitchDeck ? "Choisir un fichier" : "Suivant"}
             >
               <ChevronDown size={18} />

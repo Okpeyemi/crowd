@@ -64,7 +64,7 @@ export default function TestimonialsSection() {
           <div className="hidden items-center gap-2 md:flex">
             <button
               onClick={() => scrollBy("left")}
-              className="rounded-l-full bg-[#6C2BD9] p-3 text-white shadow hover:opacity-90"
+              className="rounded-l-full bg-[#6C2BD9] p-3 text-white shadow hover:opacity-90 cursor-pointer"
               aria-label="Précédent"
             >
               <ArrowLeft size={18} />
@@ -72,7 +72,7 @@ export default function TestimonialsSection() {
             <div className="h-6 w-px bg-white/40" />
             <button
               onClick={() => scrollBy("right")}
-              className="rounded-r-full bg-[#6C2BD9] p-3 text-white shadow hover:opacity-90"
+              className="rounded-r-full bg-[#6C2BD9] p-3 text-white shadow hover:opacity-90 cursor-pointer"
               aria-label="Suivant"
             >
               <ArrowRight size={18} />
