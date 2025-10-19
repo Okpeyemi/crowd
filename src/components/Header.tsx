@@ -230,13 +230,13 @@ export default function Header() {
                 href="#"
                 className="flex items-center gap-2 text-sm font-semibold"
               >
-                <Briefcase size={18} /> Portfolio
+               Portfolio
               </Link>
               <Link
                 href="#"
                 className="flex items-center gap-2 text-sm font-medium"
               >
-                <User size={18} /> Cristobal A.
+                Cristobal A.
               </Link>
             </div>
           </div>
