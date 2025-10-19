@@ -244,7 +244,7 @@ export default function Header() {
       )}
     </header>
     {/* Spacer to offset fixed header height */}
-    <div className="h-14 md:h-16 lg:h-20" aria-hidden />
+    <div className="h-16 lg:h-12" aria-hidden />
     </>
   );
 }
