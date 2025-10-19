@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <>
-    <header className="fixed inset-x-0 top-0 z-50 w-full border-b border-black/5 bg-background text-foreground">
+    <header className="fixed inset-x-0 top-0 z-50 w-full border-b border-black/10 bg-background text-foreground">
       <div className="flex items-center justify-between px-4 py-3 md:px-8 lg:px-40">
         <div className="flex items-center space-x-4 md:space-x-8 lg:space-x-12">
           {/* Left: Logo */}
